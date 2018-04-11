@@ -1,13 +1,12 @@
 FROM alpine:3.7
 
 RUN apk update && apk upgrade
-RUN apk add curl git unzip jq openssh-client python3 groff bind-tools bash bash-completion coreutils --update
+RUN apk add curl git unzip jq openssh-client python3 groff bind-tools bash bash-completion coreutils less --update
 RUN pip3 install pyhcl
 
 ENV PLATFORM_DIR=/platform \
-    KD_VERSION=0.8.0 \
-    KUBECTL_VERSION=1.9.2 \
-    PAGER="busybox less" \
+    KD_VERSION=0.11.0 \
+    KUBECTL_VERSION=1.10.0 \
     TMPDIR="/tmp" \
     XTERM=linux
 
